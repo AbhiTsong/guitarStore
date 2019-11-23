@@ -8,7 +8,12 @@ class ProductProvider extends Component {
  state = {
   products: [],
   detailProduct: detailProduct,
-  cart: []
+  cart: storeProducts,
+  modelOpen: false,
+  modelProduct: detailProduct ,
+  cartSubtotal: 0,
+  cartTax: 0,
+  cartTotal: 0
  }
 
  componentDidMount(){
@@ -40,8 +45,11 @@ class ProductProvider extends Component {
 
  addToCart = (id) =>{
  const tempProduct = [...this.state.products];
+ console.log(tempProduct)
  const index = tempProduct.indexOf(this.findId(id));
+ console.log(index);
  const product = tempProduct[index];
+ console.log(product);
  product.inCart = true;
  product.count = 1;
  const price = product.price; 
@@ -54,13 +62,50 @@ class ProductProvider extends Component {
  }, () => {console.log(this.state)})
 }
 
+openModel = id => {
+  const product = this.findId(id);
+  this.setState(() => {
+      return{
+        modelProduct: product, 
+        modelOpen: true}
+  })
+}
+
+closeModel = () => {
+  this.setState(() => {
+    return {modelOpen: false}
+  })
+}
+
+increment = id => {
+  console.log("The cart is incremented")
+}
+
+decremant = id => {
+  console.log("The cart is decremant")
+}
+
+removeItem = id => {
+  console.log("The cart  has been removed")
+}
+
+clearCart = id => {
+  console.log("Your Cart has been cleared")
+}
+
  render() {
   return (
    <ProductContext.Provider 
     value = {{
      ...this.state,
      handleDetail: this.handleDetail,
-     addToCart: this.addToCart
+     addToCart: this.addToCart,
+     openModel: this.openModel,
+     closeModel:this.closeModel,
+     increment: this.increment,
+     decremant: this.decremant,
+     removeItem: this.removeItem,
+     clearCart: this.clearCart
     }}>
     {this.props.children}
    </ProductContext.Provider>

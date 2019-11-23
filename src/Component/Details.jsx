@@ -48,7 +48,9 @@ export default class Details extends Component {
               <StyledButton 
                 cart
                 disabled={inCart ? true : false}
-                onClick = {() => value.addToCart(id)}
+                onClick = {() => {
+                  value.openModel(id);
+                  value.addToCart(id)}}
               >
                 {inCart ? "in cart" : "add to cart"}
               </StyledButton>

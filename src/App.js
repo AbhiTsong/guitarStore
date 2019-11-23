@@ -8,6 +8,7 @@ import ProductList from "./Component/ProductList"
 import Details from "./Component/Details"
 import Cart from "./Component/Cart"
 import Default from "./Component/Default"
+import Model from "./Component/Model";
 
 
 
@@ -15,7 +16,7 @@ import Default from "./Component/Default"
 class App extends React.Component {
   render(){    
     return (
-    <>
+      <>
     <Navbar/>
     <Switch>
       <Route exact path="/" component={ProductList}/>
@@ -23,6 +24,7 @@ class App extends React.Component {
       <Route path="/cart" component={Cart}/>
       <Route component={Default}/>
     </Switch>
+    <Model/>
     </>
   );
   }
