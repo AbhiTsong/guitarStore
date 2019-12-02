@@ -1,20 +1,30 @@
 :root{
-  --mainBlue: #2a2a72;
-  --lightBlue: #009ffd;
+  --mainBlue: #f01515;
+  --lightBlue: #05141d;
   --mainWhite: #f3f3f3;
   --mainDark: #232528;
-  --mainYellow: #ffa400;
+  --mainYellow: #b3ff00;
 }
 
+
+
 body{
-  font-family: 'Merienda One', cursive !important;
+  font-family:'Metal Mania', cursive!important;
   background: var(--mainWhite) !important;
   color: var(--mainDark) !important
 }
 
-.text-title{
-  font-family: 'New Rocker', cursive;
+.text-title{  font-family: 'New Rocker', cursive;
+}
 
+.guitar-logo{
+  color: var(--lightBlue);
+  transition: all 1s
+}
+
+.guitar-logo:hover{
+  text-decoration: none;
+  color: var(--mainYellow)
 }
 
 .text-blue{
@@ -23,4 +33,31 @@ body{
 
 .text-bright{
   color: var(--lightBlue);
+}
+
+.btn-black{
+  cursor: pointer;
+  background: transparent;
+  text-transform: capitalize;
+  font-size: 0.8em !important;
+  color: var(--mainDark);
+  border-radius: 5px !important;
+  border: 0.1em solid var(--mainDark) !important
+}
+
+.margin-top{
+  margin-top: 2rem;
+}
+
+.cart-icon{
+  cursor: pointer;
+  font-size: 1.2em;
+  color: var(--mainYellow);
+}
+.rotateimg180 {
+  -webkit-transform:rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
 }

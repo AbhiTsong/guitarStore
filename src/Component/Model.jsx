@@ -10,7 +10,6 @@ class Model extends Component {
    <ProductConsumer>
     {(value) => {
       const {modelOpen, closeModel} = value;
-      console.log(value.openModel)
       const {img, title, price} = value.modelProduct;
 
       if(!modelOpen){

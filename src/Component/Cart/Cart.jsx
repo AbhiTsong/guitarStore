@@ -4,6 +4,7 @@ import CartComponent from "./CartComponent";
 import EmptyCart from "./EmptyCart";
 import {ProductConsumer} from "../Context";
 import CartList from "./CartList";
+import CartTotal from "./CartTotal";
 
 export default class Cart extends Component {
  render() {
@@ -17,6 +18,7 @@ export default class Cart extends Component {
             <Title name = "Your" title="Cart"/>
             <CartComponent/>
             <CartList value={value}/>
+            <CartTotal value = {value}/>
          </>)}else{
           return <EmptyCart/>
          }
@@ -24,5 +26,5 @@ export default class Cart extends Component {
     </ProductConsumer>
    </section>
   )
- }
+ }s
 }
